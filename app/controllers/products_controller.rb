@@ -1,15 +1,12 @@
 class ProductsController < ApplicationController
-  def all_products
+  def index
     product = Product.all
     render json: product.as_json
   end
 
-  def one_product
-    product_id = params[:id].to_s
+  def show
+    product_id = params["id"]
     product = Product.find_by(id: product_id)
     render json: product.as_json
-  end
-
-  def search_products
   end
 end
