@@ -20,9 +20,5 @@ Content-Type: application/json
 
 ### DELETE
 
-DELETE http://localhost:3000/products.json
+DELETE http://localhost:3000/products/14.json
 Content-Type: application/json
-
-{
-  "id": 14
-}

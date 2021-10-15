@@ -32,6 +32,8 @@ class ProductsController < ApplicationController
   def destroy
     product_id = params["id"]
     product = Product.find_by(id: product_id)
-    product = product.destroy
+
+    product.destroy
+    render json: { message: "This product has been destroyed!" }
   end
 end
