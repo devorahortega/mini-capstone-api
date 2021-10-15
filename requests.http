@@ -10,15 +10,15 @@ Content-Type: application/json
 
 ###  UPDATE
 
-PATCH http://localhost:3000/products/9.json
+PATCH http://localhost:3000/products/16.json
 Content-Type: application/json
 
 {
-  "name": "Pens", 
-  "description": "The mightiest weapons in the world being sold for only 5.99!"
+  "image_url": "nil",
+  "description": "A mythical thing being sold only for a short time!"
 }
 
 ### DELETE
 
-DELETE http://localhost:3000/products/14.json
+DELETE http://localhost:3000/products/16.json
 Content-Type: application/json
