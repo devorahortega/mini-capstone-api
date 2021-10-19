@@ -1,4 +1,25 @@
+GET http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "id": 13
+}
+
+###
+
 POST http://localhost:3000/products.json
+Content-Type: application/json
+
+{
+  "name": "Cow", 
+  "price": 200.99, 
+  "image_url": "https://images.unsplash.com/photo-1570042225831-d98fa7577f1e?ixid=MnwxMjA3fDB8MHxzZWFyY2h8MXx8ZGFpcnklMjBjb3d8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80",
+  "description": "For all ye introverts, so you never have to leave the house to go buy milk again!"
+}
+
+###  UPDATE
+
+PATCH http://localhost:3000/products/6.json
 Content-Type: application/json
 
 {
@@ -8,17 +29,7 @@ Content-Type: application/json
   "description": "The mightiest weapon in the world now on sale for only 5.99!"
 }
 
-###  UPDATE
-
-PATCH http://localhost:3000/products/16.json
-Content-Type: application/json
-
-{
-  "image_url": "nil",
-  "description": "A mythical thing being sold only for a short time!"
-}
-
 ### DELETE
 
-DELETE http://localhost:3000/products/16.json
+DELETE http://localhost:3000/products/17.json
 Content-Type: application/json
