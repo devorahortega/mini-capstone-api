@@ -7,7 +7,12 @@ class ProductsController < ApplicationController
   def create
     product = Product.new(name: params["name"], price: params["price"], image_url: params["image_url"], description: params["description"])
     product.save
-    render json: product
+
+    if product.save
+      render json: product
+    else
+      render json: {error: product.errors.full_messages } status: :unprocessable_entity 
+    end
   end
 
   def show
@@ -25,15 +30,18 @@ class ProductsController < ApplicationController
     product.image_url = params["image_url"] || product.image_url
     product.description = params["description"] || product.description
 
-    product.save
-    render json: product
-
-    def destroy
-      product_id = params["id"]
-      product = Product.find_by(id: product_id)
-
-      product.destroy
-      render json: { message: "This product has been destroyed!" }
+    if product.save
+      render json: product
+    else
+      render json: {error: product.errors.full_messages } status: :unprocessable_entity 
     end
+  end
+
+  def destroy
+    product_id = params["id"]
+    product = Product.find_by(id: product_id)
+
+    product.destroy
+    render json: { message: "This product has been destroyed!" }
   end
 end
