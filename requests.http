@@ -14,19 +14,17 @@ Content-Type: application/json
   "name": "Book", 
   "price": 35.00, 
   "image_url": "https://images.unsplash.com/photo-1506880018603-83d5b814b5a6?ixid=MnwxMjA3fDB8MHxzZWFyY2h8Mnx8cmVhZGluZyUyMGJvb2t8ZW58MHx8MHx8&ixlib=rb-1.2.1&w=1000&q=80", 
-  "description": "A place to lose yourself for extended periods of time in a different universe."
+  "description": "A place to lose yourself for extended periods of time in a different universe.",
+  "supplier_id": 1
 }
 
 ###  UPDATE
 
-PATCH http://localhost:3000/products/6.json
+PATCH http://localhost:3000/products/4.json
 Content-Type: application/json
 
 {
-  "name": "Pen", 
-  "price": 5.99, 
-  "image_url": "https://m.media-amazon.com/images/I/71LbzzDezeL._AC_SY355_.jpg",
-  "description": "The mightiest weapon in the world now on sale for only 5.99!"
+  "supplier_id": 1
 }
 
 ### DELETE

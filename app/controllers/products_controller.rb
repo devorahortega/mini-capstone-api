@@ -11,7 +11,7 @@ class ProductsController < ApplicationController
     if product.save
       render json: product
     else
-      render json: {error: product.errors.full_messages } status: :unprocessable_entity 
+      render json: { message: product.errors.full_messages }
     end
   end
 
@@ -29,11 +29,12 @@ class ProductsController < ApplicationController
     product.price = params["price"] || product.price
     product.image_url = params["image_url"] || product.image_url
     product.description = params["description"] || product.description
+    product.supplier_id = params["supplier_id"] || product.supplier_id
 
     if product.save
       render json: product
     else
-      render json: {error: product.errors.full_messages } status: :unprocessable_entity 
+      render json: { message: product.errors.full_messages }
     end
   end
 
