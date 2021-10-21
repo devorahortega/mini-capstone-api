@@ -6,6 +6,10 @@ class Product < ApplicationRecord
     Supplier.find_by(id: supplier_id)
   end
 
+  #def images
+  # Image.where(image_id: id)
+  #end
+
   def is_discounted?
     price <= 10
   end
