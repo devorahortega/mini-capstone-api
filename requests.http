@@ -31,3 +31,14 @@ Content-Type: application/json
 
 DELETE http://localhost:3000/products/17.json
 Content-Type: application/json
+
+###
+POST http://localhost:3000/users
+Content-Type: application/json
+
+{
+  "name": "May",
+  "email": "may@example.com",
+  "password": "mayflowers644",
+  "password_confirmation": "mayflowers644"
+}
