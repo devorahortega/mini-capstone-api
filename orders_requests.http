@@ -1,0 +1,19 @@
+###
+POST http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUyNzA2MzB9.gBQqdNVoXUJS755m6Nrx3wV981F-2njKe9ebrBR2RWM
+Content-Type: application/json
+
+{
+  "product_id": 4, 
+  "quantity": 10,
+}
+
+###
+GET http://localhost:3000/orders/1.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUyNzA2MzB9.gBQqdNVoXUJS755m6Nrx3wV981F-2njKe9ebrBR2RWM
+Content-Type: application/json
+
+###
+GET http://localhost:3000/orders.json
+Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUyNzA2MzB9.gBQqdNVoXUJS755m6Nrx3wV981F-2njKe9ebrBR2RWM
+Content-Type: application/json

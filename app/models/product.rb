@@ -1,10 +1,8 @@
 class Product < ApplicationRecord
+  has_many :orders
   #validates :name, presence: true, uniqueness: true
   #validates :price, presence: true, numericality: {greater_than: 0}
   #validates :description, length: { minimum: 10, maximum: 100 }
-  def images
-    image.where(product_id: id)
-  end
 
   def supplier
     Supplier.find_by(id: supplier_id)
