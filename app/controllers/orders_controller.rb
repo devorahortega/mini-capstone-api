@@ -1,7 +1,13 @@
 class OrdersController < ApplicationController
+  before_action :authenticate_admin, except: [:index, :show]
+
   def index
-    order = Order.all
-    render json: order.as_json
+    if current_user
+      order = current_user.orders
+      render json: order.as_json
+    else
+      render json: { error: "Unauthorized" }
+    end
   end
 
   def create
@@ -13,7 +19,6 @@ class OrdersController < ApplicationController
 
     order = Order.new(
       user_id: current_user.id,
-      product_id: params["product_id"],
       quantity: params["quantity"],
       subtotal: subtotal,
       tax: tax,
@@ -21,14 +26,17 @@ class OrdersController < ApplicationController
     )
 
     if order.save
-      render json: order.as_json
+      render json: order
     else
       render json: { errors: order.errors.full_messages }
     end
   end
 
   def show
-    order = Order.find_by(id: params["id"])
+    order = current_user.orders.find_by[id: params["id"]]
     render json: order.as_json
+  end
+
+  def authenticate_user
   end
 end
