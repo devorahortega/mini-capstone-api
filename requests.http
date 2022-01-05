@@ -1,4 +1,4 @@
-GET http://localhost:3000/products.json
+GET http://localhost:3000/products.json?category=Animals
 Authorization: Bearer eyJhbGciOiJIUzI1NiJ9.eyJ1c2VyX2lkIjozLCJleHAiOjE2MzUwMTQzMTl9.saqeCnlMg8KVYV9dkeHtpqmFlQYeuKCRiElkK0nElZ8
 Content-Type: application/json
 
@@ -47,3 +47,13 @@ Content-Type: application/json
   "password": "mayflowers644",
   "password_confirmation": "mayflowers644"
 }
+
+### Sessions create (login)
+POST http://localhost:3000/sessions
+Content-Type: application/json
+{
+  "email": "test@test.com",
+  "password": "password"
+}
+
+

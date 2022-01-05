@@ -1,0 +1,17 @@
+Adding to the Order Method:
+
+1. we have a working users, products and orders tables
+2. create a carted_products table
+3. assign an order id to table
+4. assign user id to table
+5. add product id to the table
+6. each order has many carted_products
+7. carted_products belongs to one order 
+8. orders prints out the total of all the carted_products
+9. users have many carted_products
+10. one instance of carted_products belongs to a user
+11. 
+12.
+13.
+14.
+15.
